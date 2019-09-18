@@ -1,0 +1,88 @@
+@import "../variables";
+@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Heebo:300&display=swap');
+
+@font-face {
+    font-family: "Gellato Rush";
+    src: url("../../../../Gellato\ Rush.otf") format("otf"),
+        url("../../../../Gellato\ Rush.otf") format("opentype")
+}
+
+.aboutMe {
+    
+    background-color: lightgrey;
+
+    #BG {
+
+        width: 100vw;
+        background-color: $secondary;
+        background-image: url('../../../../images/home/code2.jpg');
+        background-size: cover;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+    }
+
+    #IMAGE {
+        height: 100vh;
+
+    }
+
+
+
+
+
+
+    .btn {
+        background-color: $primary;
+        color: $secondary;
+    }
+
+    h1 {
+        font-size: 6vw;
+        font-family: 'Heebo', sans-serif;
+        font-style: Bold;
+    }
+
+    h3 {
+        font-size: 8vw;
+    }
+
+    h6 {
+        font-size: 2vw;
+        padding-top: 6px;
+
+        font-family: 'Heebo', sans-serif;
+        font-weight: 300;
+    }
+
+    i {
+        padding-right: 20px;
+        padding-bottom: 20px;
+
+        background: -webkit-linear-gradient(#108dc7, #FC5C7D);
+    -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+     
+
+        
+    }
+
+    hr {
+        width: 40%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

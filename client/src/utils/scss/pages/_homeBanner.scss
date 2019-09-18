@@ -1,0 +1,41 @@
+@import "../variables";
+@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Heebo:300&display=swap');
+
+
+
+.home {
+    
+
+    h1 {
+        font-family: 'Heebo', sans-serif;
+        font-style: Bold;
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    p {
+        font-family: 'Heebo', sans-serif;
+        font-style: Light;
+    }
+
+    #subtitle {
+        text-align: center;
+        font-size: 2vw;
+    }
+
+    #BannerButton {
+        font-family: 'Heebo', sans-serif;
+        font-style: Light;
+    }
+
+.jumbotron {
+    margin-top: 100px;
+    background-image: url(../../../../images/home/code.jpg);
+    background-size: 100%;
+    
+}
+
+
+
+}

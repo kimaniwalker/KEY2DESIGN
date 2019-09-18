@@ -1,0 +1,25 @@
+@import "../variables";
+@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Heebo:300&display=swap');
+
+.banner {
+
+
+    h1 {
+        font-family: 'Heebo', sans-serif;
+        font-style: Bold;
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    h3 {
+        font-family: 'Heebo', sans-serif;
+        font-weight: 300 ;
+        font-size: 2vw;
+    }
+
+    .container-fluid {
+        background-image: linear-gradient(to right, #108dc7 ,  #FC5C7D);
+        
+    }
+}

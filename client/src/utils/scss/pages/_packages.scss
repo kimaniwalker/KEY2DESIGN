@@ -1,0 +1,38 @@
+@import "../variables";
+@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Heebo:300&display=swap');
+
+
+
+
+
+.packages {
+    
+    .card{
+        width: 325px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .card-header{
+        height: 140px;
+        text-align: center;
+    }
+
+    h1 {
+        font-family: 'Heebo', sans-serif;
+        font-style: Regular;
+        font-size: 60px;
+        color: white;
+    }
+
+    .featuredTitle{
+        color: aqua;
+        font-family: 'Heebo', sans-serif;
+        font-style: Light;
+    }
+
+    
+    
+}
+
+

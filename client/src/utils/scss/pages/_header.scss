@@ -1,0 +1,41 @@
+@import "../variables";
+
+@font-face {
+    font-family: "Gellato Rush";
+    src: url("../../../../Gellato\ Rush.otf") format("otf"),
+        url("../../../../Gellato\ Rush.otf") format("opentype")
+}
+
+.header {
+
+    body {
+        margin-top: 40px;
+    }
+
+
+    .navi {
+        height: 100px;
+        background: $dark;
+        
+        /* Set the navbar to fixed position */
+        
+        /* Position the navbar at the top of the page */
+        width: 100%;
+        /* Full width */
+
+        
+
+    }
+    
+
+    h2 {
+
+        font-family: "Gellato Rush";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 30pt;
+    }
+    
+
+
+}
