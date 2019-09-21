@@ -2,26 +2,52 @@ import { Router } from 'express';
 import { tokenMiddleware, isLoggedIn } from '../middleware/auth.mw';
 import { generateHash } from "../utils/security";
 import Table from "../table";
+import logger from '../middleware/winston';
+
 
 let router = Router();
 let userTable = new Table("users");
 
-router.get('/me', tokenMiddleware, isLoggedIn, (req, res) => {
+router.use(function(req,res,next){
+  logger.debug('Sent From: ' + req.ip + 
+  'Request Type: ' + req.method +
+  'API URL: ' + req.baseUrl +
+  'Host Name: ' +
+  'Request Object: ' +  JSON.stringify(req.body));  
+  next();
+  });
+
+router.get('/me', tokenMiddleware, isLoggedIn, async (req, res) => {
+  
+  try {
   console.log(req.user);  
-  res.json(req.user);
+    res.json(req.user);
+  } catch(err) {
+
+    console.log(err);
+    res.sendStatus(500);
+  }
+  
     
 });
 
 
-router.get('/', (req, res) => {
-  userTable.getAll()
+router.get('/', async (req, res) => {
+  try {
+userTable.getAll()
       .then(users => {
           res.json(users);
       })
+  } catch(err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
+  
 });
 
 router.get('/:id', async (req, res) => {
   try {
+   
       let foundClass = await userTable.getOne(req.params.id);
       res.json(foundClass);
   } catch (err) {
@@ -37,7 +63,10 @@ router.get('/:id', async (req, res) => {
  * in the request's body
  */
 router.post("/", async (req, res) => {
-    try {
+  
+  
+  try {
+
       let hash = await generateHash(req.body.password);
       let insertObject = {
         email: req.body.email,
@@ -47,13 +76,18 @@ router.post("/", async (req, res) => {
         profile_picture_link: req.body.profile_picture_link
         
       };
+
+      logger.info('Request Object' +  JSON.stringify(insertObject));
       let idObj = await userTable.insert(insertObject);
       res.status(201).json(idObj);
+      
     } catch (err) {
-      console.log(err);
+      logger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip} - `);
+      console.log('Error' + err);
       if (err.errno === 1062) {
         res.status(500).send("Emails have to be unique!");
       } else res.status(500).send(err);
+      
     }
   });
 

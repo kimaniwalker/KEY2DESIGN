@@ -8,7 +8,7 @@ const HomeBanner = () => {
 
   const handleLink = () => {
     console.log('here');
-    window.location.href = '/aboutme';
+    window.location.href = '/aboutus';
   }
 
 

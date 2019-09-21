@@ -6,7 +6,7 @@ const Packages = () => {
   
 
   const handleLink = () => {
-    window.location.href = '/aboutme';
+    window.location.href = '/aboutus';
   }
   
     return (

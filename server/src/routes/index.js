@@ -10,7 +10,10 @@ import { isLoggedIn, tokenMiddleware } from '../middleware/auth.mw';
 import StripeRegisterRouter from './stripeRegisterPost';
 import StripeChargesPostRouter from './stripeChargePost';
 
+
+
 let router = Router();
+
 /* 
 router.use(tokenMiddleware);
 router.use(isLoggedIn);

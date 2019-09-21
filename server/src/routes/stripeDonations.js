@@ -4,12 +4,24 @@ import stripeLoader from 'stripe';
 import { config } from '../config';
 require('isomorphic-fetch');
 const stripe = stripeLoader(config.STRIPE_SK);
+import logger from '../middleware/winston';
 
 
 
 let router = Router();
+
+router.use(function(req,res,next){
+  logger.debug('Sent From: ' + req.ip + 
+  'Request Type: ' + req.method +
+  'API URL: ' + req.baseUrl +
+  'Host Name: ' +
+  'Request Object: ' +  JSON.stringify(req.body));  
+  next();
+  });
+
 /* CREATE CHARGE */
 router.post('/', async (req, res) => {
+  
   let tokenId = req.body.token.id;
   let amount = req.body.token.amount;
   let description = req.body.token.description;
@@ -20,6 +32,7 @@ router.post('/', async (req, res) => {
   try {
     let chargeResponse = await charge(tokenId, amount, description, phone, email);
     res.sendStatus(200);
+    logger.info(res.statusCode + ' Response from Stripe ');
     console.log(chargeResponse);
     console.log(chargeResponse.id);
     console.log(chargeResponse.object);
@@ -47,6 +60,8 @@ router.post('/', async (req, res) => {
 
 
   } catch (err) {
+
+    logger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip} - `);
     console.log(err);
     res.sendStatus(500);
   }
