@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import HelloWorld from './hello';
 import UserDetailScreen from './screens/Profile';
+import Ticket from './screens/SupportTicket/ticket';
 import PrivateRoute from './auth/privateRoute';
 import Login from './auth/login2';
 import Google from "./screens/Login/google";
@@ -41,6 +42,7 @@ class Navigation extends Component {
                         <Route path="/striperegisterpost" component={StripeRegisterPost} />
                         <Route path="/me" component={UserDetailScreen} />
                         <Route path="/profile" component={HelloWorld} />
+                        <Route path="/ticket" component={Ticket} />
                     </Switch>
                 </Fragment>
             </Router>

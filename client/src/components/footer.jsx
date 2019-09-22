@@ -25,6 +25,9 @@ const Footer = () => {
                                     <a id="blogLinks" class="nav-link" href="/payment">Make A Payment</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a id="blogLinks" class="nav-link" href="/ticket">Create A Ticket</a>
+                                </li>
+                                <li class="nav-item">
                                     <a id="blogLinks" class="nav-link" href="/contact">Contact Us</a>
                                 </li>
                             </ul>

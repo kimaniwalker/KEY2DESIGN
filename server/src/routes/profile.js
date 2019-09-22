@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('../config/dbFiles/profile');
 
 
-const router = express.Router();
+const router = express.Router(); 
 
 router.use(function(req,res,next){
 logger.debug(
