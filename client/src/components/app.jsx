@@ -15,7 +15,7 @@ import RegisterScreen from './register2';
 import Welcome from './welcome';
 import StripeRegister from './striperegister';
 import StripeRegisterPost from './striperegister2';
-import AboutMe from './aboutMe';
+import AboutMe2 from './screens/AboutUs/aboutUs2';
 import Footer from './footer';
 
 
@@ -31,7 +31,7 @@ class Navigation extends Component {
                         <Route exact path="/header" component={Header} />
                         <Route path="/register" component={RegisterScreen} />
                         <PrivateRoute path="/admin" component={BlogAdmin} />
-                        <Route exact path="/aboutus" component={AboutMe} />
+                        <Route exact path="/aboutus" component={AboutMe2} />
                         <Route path="/login" component={Login} />
                         <Route path="/logout" component={Logout} />
                         <Route path="/footer" component={Footer} />
