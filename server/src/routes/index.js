@@ -20,6 +20,9 @@ router.use(tokenMiddleware);
 router.use(isLoggedIn);
  */
 
+
+
+
 router.use('/auth', authRouter);
 router.use('/donate', stripeDonationsRouter);
 router.use('/contact', contactRouter);
@@ -30,11 +33,11 @@ router.use('/striperegisterpost', StripeRegisterRouter);
 router.use('/stripecharges', StripeChargesPostRouter);
 router.use('/workrequest', WorkRequestRouter);
 
-
 router.route('*')
-    .post(tokenMiddleware, isLoggedIn)
-    .put(tokenMiddleware, isLoggedIn)
-    .delete(tokenMiddleware, isLoggedIn)
-    .get(tokenMiddleware, isLoggedIn);
+.post(tokenMiddleware, isLoggedIn)
+.put(tokenMiddleware, isLoggedIn)
+.delete(tokenMiddleware, isLoggedIn)
+.get(tokenMiddleware, isLoggedIn);
+
 
 export default router;
