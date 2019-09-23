@@ -6,7 +6,7 @@ const Footer = () => {
     return (
 
         <main className="Footer">
-            <div id="container" className="container-fluid bg-dark">
+            <div id="container" className="container-fluid">
                 <div className="row justify-content-center">
                     <nav class="navbar navbar-expand-lg navbar-light">
 

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import '../../../utils/scss/pages/_supportTicket.scss';
+import Header2 from '../Header/header2'
 import { Redirect } from "react-router-dom";
 import useReactRouter from 'use-react-router';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
+import Footer from '../../footer';
+
 
 
 const Ticket = () => {
@@ -88,7 +91,8 @@ const Ticket = () => {
     } else
     return (
         <div className="checkoutForm">
-            <div className="container-fluid bg-dark">
+            <Header2 />
+            <div className="container-fluid">
             <NotificationContainer />
                 <div className="row pt-3 pb-3 justify-content-center">
                     <div id="FormBg" className="col-lg-5 col-md-6 col-sm-7 bg-dark pt-4">
@@ -127,12 +131,13 @@ const Ticket = () => {
                             </div>
 
                             <div className="row mb-4 ml-3 mr-3">
-                                <input 
-                                className="input-group"
+                                <textarea
+                                cols="30" rows="10"
+                                className="form-group"
                                 onChange={handleRequest}
                                 value={request}
                                 placeholder="Request">
-                                </input>
+                                </textarea>
                             </div>
 
 
@@ -165,6 +170,8 @@ const Ticket = () => {
 
             </div>
 
+            
+<Footer />
         </div>
 
     );

@@ -8,6 +8,7 @@ import useReactRouter from 'use-react-router';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
 
 
+
 const Payment = (props) => {
 
 
@@ -77,8 +78,11 @@ const Payment = (props) => {
         return <Redirect to={from} />
     } else
     return (
+        
         <div className="checkoutForm">
+            
             <div className="container-fluid bg-dark">
+        
             <NotificationContainer />
                 <div className="row pt-3 pb-3 justify-content-center">
                     <div id="FormBg" className="col-lg-5 col-md-6 col-sm-7 bg-dark pt-4">

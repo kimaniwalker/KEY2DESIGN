@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/lokiddo';
 var CLOUDINARY_UPLOAD_PRESET = 'muuqonjl';
-import '../../src/utils/scss/pages/_home.scss';
+
 
 
 
