@@ -118,7 +118,7 @@ class RegisterScreen extends Component {
               <h1>Start an account</h1>
 
               <div className="form-group">
-                <label htmlFor="first_name">Firs name:</label>
+                <label htmlFor="first_name">First name:</label>
                 <input
                   value={this.state.first_name}
                   onChange={event => this.handleFirstName(event.target.value)}
