@@ -19,7 +19,7 @@ const Footer = () => {
                                     <a id="blogLinks" class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a id="blogLinks" class="nav-link" href="/aboutme">About Us</a>
+                                    <a id="blogLinks" class="nav-link" href="/aboutus">About Us</a>
                                 </li>
                                 <li class="nav-item">
                                     <a id="blogLinks" class="nav-link" href="/payment">Make A Payment</a>

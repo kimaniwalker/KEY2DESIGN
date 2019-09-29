@@ -9,7 +9,7 @@ import Google from "./screens/Login/google";
 import Logout from './auth/logout';
 import Header from './screens/Header/header';
 import BlogAdmin from './admin';
-import Contact from './contact2';
+import Contact2 from './screens/ContactUs/contact2';
 import Donate from './donate';
 import RegisterScreen from './register2';
 import Welcome from './welcome';
@@ -34,7 +34,7 @@ class Navigation extends Component {
                         <Route exact path="/aboutus" component={AboutMe2} />
                         <Route path="/login" component={Login} />
                         <Route path="/logout" component={Logout} />
-                        <Route exact path="/contact" component={Contact} />
+                        <Route exact path="/contact" component={Contact2} />
                         <Route exact path="/payment" component={Donate} />
                         <Route path="/login/google/:token" component={Google} />  
                         <Route path="/striperegister" component={StripeRegister} />

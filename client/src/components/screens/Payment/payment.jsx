@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import '../../../utils/scss/pages/_checkoutForm.scss';
 import { injectStripe } from 'react-stripe-elements';
 import { postCharge } from '../../../services/stripeService';
 import CardSection from '../../cardSection';
 import { Redirect } from "react-router-dom";
 import useReactRouter from 'use-react-router';
+import Header2 from '../Header/header2';
+import Footer from '../../footer';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
 
 
@@ -78,8 +80,10 @@ const Payment = (props) => {
         return <Redirect to={from} />
     } else
     return (
-        
+        <Fragment>
+        <Header2 />
         <div className="checkoutForm">
+            
             
             <div className="container-fluid bg-dark">
         
@@ -159,9 +163,11 @@ const Payment = (props) => {
                 </div>
 
             </div>
+            
 
         </div>
-
+<Footer />
+</Fragment>
     );
 
 }

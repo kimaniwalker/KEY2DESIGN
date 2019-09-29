@@ -78,7 +78,7 @@ const CheckoutForm = (props) => {
     } else
     return (
         <div className="checkoutForm">
-            <div className="container-fluid bg-dark">
+            <div className="container-fluid">
             <NotificationContainer />
                 <div className="row pt-3 pb-3 justify-content-center">
                     <div id="FormBg" className="col-lg-5 col-md-6 col-sm-7 bg-dark pt-4">
@@ -131,7 +131,7 @@ const CheckoutForm = (props) => {
                                 <input className="input-group"
                                     value={amount}
                                     onChange={handleamount}
-                                    placeholder="Amount" />
+                                    placeholder="Amount Ex. 40.00" />
                             </div>
 
 

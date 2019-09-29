@@ -1,16 +1,17 @@
 import React, { useState, Fragment } from 'react';
-import { sendContacEmail } from '../services/contact';
+import { sendContacEmail } from '../../../services/contact';
 import { Redirect } from "react-router-dom";
 import useReactRouter from 'use-react-router';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
 
-import '../utils/scss/pages/_contact.scss';
-import Header2 from './screens/Header/header2';
-import Footer from './footer';
+import '../../../utils/scss/pages/_contact';
+import Header2 from '../Header/header2';
+import Footer from '../../footer';
+
 
 const { from } =  { from: { pathname: "/" } };
 
-const Contact = (props) => {
+const Contact2 = (props) => {
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
     const [email, setEmail] = useState('');
@@ -50,6 +51,7 @@ const Contact = (props) => {
     } else
     return (
         <Fragment>
+            <Header2 />
         <main className="contact">
             <NotificationContainer />
             <div className="container-fluid">
@@ -84,10 +86,11 @@ const Contact = (props) => {
                 </div>
             </div>
         </main>
+        <Footer />
         
         </Fragment>
 
     )
 }
 
-export default Contact;
+export default Contact2;

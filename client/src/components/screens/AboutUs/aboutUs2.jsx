@@ -95,11 +95,11 @@ class AboutMe2 extends Component {
 
 
                     </div>
-<Footer />
+
                     
 
                 </main>
-
+<Footer />
             </Fragment>
         )
 

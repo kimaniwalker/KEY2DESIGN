@@ -1,7 +1,9 @@
 
 
 let cfg = {
-    MAILGUN_API_KEY: process.env.MAILGUN_API_KEY,
+    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+    TIMBER: process.env.TIMBER,
+    TIMBER_SOURCEID: process.env.TIMBER_SOURCEID,
     STRIPE_SK: process.env.STRIPE_SK,
     CLOUDINARY: process.env.CLOUDINARY,
     db: {
