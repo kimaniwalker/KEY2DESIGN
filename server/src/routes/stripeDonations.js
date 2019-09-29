@@ -52,7 +52,7 @@ router.post('/', async (req, res) => {
     console.log(object);
     console.log('here');
 
-    await fetch('http://localhost:3000/api/stripecharges', {
+    await fetch('http://www.key2design.io/api/stripecharges', {
       method: "POST",
       body: JSON.stringify(object),
       headers: new Headers({ "Content-Type": "application/json" })
