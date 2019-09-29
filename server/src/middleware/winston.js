@@ -65,7 +65,7 @@ const options =  {
 const logger = winston.createLogger({
    
     transports: [
-       /*  new TimberTransport(timber), */
+        new TimberTransport(timber),
         new winston.transports.File(options.info),
         new winston.transports.File(options.server),
         new winston.transports.File(options.debug),
