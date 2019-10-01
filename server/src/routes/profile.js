@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('../config/dbFiles/profile');
+import logger from '../middleware/winston';
 
 
 const router = express.Router(); 
