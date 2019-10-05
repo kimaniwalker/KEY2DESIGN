@@ -1,10 +1,7 @@
 @import "../variables";
+@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Heebo:100&display=swap');
 
-@font-face {
-    font-family: "Gellato Rush";
-    src: url("../../../../Gellato\ Rush.otf") format("otf"),
-        url("../../../../Gellato\ Rush.otf") format("opentype")
-}
 
 .header {
 
@@ -12,21 +9,29 @@
         margin-top: 40px;
     }
 
+    #blogLinks {
+        color: $primary;
+        font-family: 'Heebo', sans-serif;
+        font-weight: 100;
+    }
+
 
     .navi {
         height: 100px;
         background: $dark;
-        
+
         /* Set the navbar to fixed position */
-        
+
         /* Position the navbar at the top of the page */
         width: 100%;
         /* Full width */
 
-        
+
 
     }
+
     
+
 
     h2 {
 
@@ -35,7 +40,8 @@
         font-style: normal;
         font-size: 30pt;
     }
-    
+
+
 
 
 }

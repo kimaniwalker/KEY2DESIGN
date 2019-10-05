@@ -26,20 +26,20 @@ class AboutMe extends Component {
                         <div className="row pt-5 justify-content-center d-flex flex-wrap">
                             <div className="col-lg-3 col-md-12 col-sm-12">
                                 <div className="row justify-content-center ">
-                                    <i class="fas fa-cash-register fa-2x"></i> <h6>Cost Effective</h6>
+                                    <i className="fas fa-cash-register fa-2x"></i> <h6>Cost Effective</h6>
 
                                 </div>
                             </div>
 
                             <div className="col-lg-3 col-md-12 col-sm-12 ">
                                 <div className="row justify-content-center">
-                                    <i class="far fa-lightbulb fa-2x"></i> <h6>Creative</h6>
+                                    <i className="far fa-lightbulb fa-2x"></i> <h6>Creative</h6>
                                 </div>
                             </div>
 
                             <div className="col-lg-3 col-md-12 col-sm-12 ">
                                 <div className="row justify-content-center">
-                                    <i class="fas fa-rocket fa-2x"></i> <h6>Innovative</h6>
+                                    <i className="fas fa-rocket fa-2x"></i> <h6>Innovative</h6>
                                 </div>
                             </div>
 
@@ -49,20 +49,20 @@ class AboutMe extends Component {
                         <div className="row pt-5 justify-content-center d-flex flex-wrap">
                             <div className="col-lg-3 col-md-12 col-sm-12">
                                 <div className="row justify-content-center ">
-                                    <i class="fas fa-check-square fa-2x"></i> <h6>Transparent</h6>
+                                    <i className="fas fa-check-square fa-2x"></i> <h6>Transparent</h6>
 
                                 </div>
                             </div>
 
                             <div className="col-lg-3 col-md-12 col-sm-12 ">
                                 <div className="row justify-content-center">
-                                    <i class="far fa-clock fa-2x"></i> <h6>Timely</h6>
+                                    <i className="far fa-clock fa-2x"></i> <h6>Timely</h6>
                                 </div>
                             </div>
 
                             <div className="col-lg-3 col-md-12 col-sm-12 ">
                                 <div className="row justify-content-center">
-                                    <i class="far fa-gem fa-2x"></i> <h6>Quality</h6>
+                                    <i className="far fa-gem fa-2x"></i> <h6>Quality</h6>
                                 </div>
                             </div>
 
@@ -74,18 +74,18 @@ class AboutMe extends Component {
 
                         <div className="row justify-content-center pt-4 pb-3">
                             <h1 className="text-dark">How Can We Help You ?</h1>
-                            <p>
+                            <div>
                             <h6>If you don’t have a website, you’re leaving money on the table.</h6>
-                            </p>
-                            <p>
+                            </div>
+                            <div>
                             <h6>Customers and donors look for more information about nonprofits and</h6>   
-                            </p>
-                            <p>
+                            </div>
+                            <div>
                             <h6>businesses by Googling them first. Make a strong first impression.</h6>  
-                            </p>
-                            <p>
+                            </div>
+                            <div>
                             <h6>People find you online.</h6>
-                            </p>
+                            </div>
 
 
                         </div>

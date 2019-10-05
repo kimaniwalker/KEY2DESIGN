@@ -16,12 +16,12 @@ const HomeBanner = () => {
     <Fragment>
       <main className="home">
 
-        <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1 class="text-light">Sofware Development Done Right</h1>
-            <p id="subtitle" class="lead">Establish More Customers, Not Just Local But Global</p>
+        <div className="jumbotron jumbotron-fluid">
+          <div className="container">
+            <h1 className="text-light">Sofware Development Done Right</h1>
+            <p id="subtitle" className="lead">Establish More Customers, Not Just Local But Global</p>
             <div className="row justify-content-center">
-              <button id="BannerButton" onClick={handleLink} type="button" class="btn btn-outline-info">
+              <button id="BannerButton" onClick={handleLink} type="button" className="btn btn-outline-info">
                 Learn More About Us
               </button>
             </div>

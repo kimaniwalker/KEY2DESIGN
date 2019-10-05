@@ -8,13 +8,13 @@ const Header2 = () => {
 
     return (
         <main className="header">
-            <section class="container-fluid navi">
+            <section className="container-fluid navi">
                 <div className="container-fluid">
                     <div className="row">
 
                         <div className="col">
                             <div className="row justify-content-center pt-2 pb-2">
-                                <img height="85px" src="../../images/footer/logo.png"></img>
+                                <a href="/"><img height="85px" src="../../images/footer/logo.png"></img></a>
 
                             </div>
 

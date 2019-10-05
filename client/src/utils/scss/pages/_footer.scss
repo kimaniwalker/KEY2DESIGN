@@ -1,16 +1,29 @@
 @import "../variables";
+@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Heebo:300&display=swap');
 
-@font-face {
-    font-family: "Gellato Rush";
-    src: url("../../../../Gellato\ Rush.otf") format("otf"),
-        url("../../../../Gellato\ Rush.otf") format("opentype")
-}
+
 
 .Footer {
-
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: $dark;
     
-    #blogLinks {
+
+
+    i {
+        padding: 20px
+    }
+
+    i:hover {
+        transform: scale(1.5);
+        color: $primary;
+    }
+    
+
+    p {
+        font-size: 10px;
+        font-family: 'Heebo', sans-serif;
         color: $secondary
     }
 

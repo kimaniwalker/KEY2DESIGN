@@ -5,6 +5,7 @@ const path = require('path');
 const CLIENT_DEST = path.join(__dirname, './client/dist');
 
 module.exports = {
+    mode: 'development',
     entry: ['babel-polyfill', './client/src/index.js'],
     output: { path: CLIENT_DEST, filename: 'bundle.js' },
     module: {

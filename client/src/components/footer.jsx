@@ -7,50 +7,30 @@ const Footer = () => {
 
         <main className="Footer">
             <div id="container" className="container-fluid">
-                <div className="row justify-content-center">
-                    <nav class="navbar navbar-expand-lg navbar-light">
+                <div className="row">
+                    <div className="col-12">
+                        <div className="row justify-content-center">
 
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item active">
-                                    <a id="blogLinks" class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a id="blogLinks" class="nav-link" href="/aboutus">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a id="blogLinks" class="nav-link" href="/payment">Make A Payment</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a id="blogLinks" class="nav-link" href="/ticket">Create A Ticket</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a id="blogLinks" class="nav-link" href="/contact">Contact Us</a>
-                                </li>
-                            </ul>
+                        
+                        <p>COPYRIGHT 2019 KEY2DESIGN LLC</p>
+                        <div class="w-100"></div>
+                        
+                           <a href="mailto:admin@key2design.io"><i className="fas fa-envelope-open-text text-light"></i></a>
+                        <a href="tel:+12056038724"><i className="fas fa-phone-volume text-light"></i></a>
+                        <a href="#"><i className="fab fa-instagram text-light"></i></a>
+                        <a href="#"><i className="fab fa-facebook text-light"></i></a>
+                        <a href="#"><i className="fas fa-money-check-alt text-light"></i></a> 
+                        
                         </div>
-                    </nav>
-                </div>
-                <div className="row justify-content-center text-light">
-                    <div className="col-auto">
-                        <h3>Site Developed by Key2Design</h3>
-                    </div>
-                </div>
-                <div className="row justify-content-center">
-                    <div className="col-auto">
-                        <nav class="navbar navbar-light">
-                            <a class="navbar-brand" href="#">
-                                <img src="../../images/footer/logo.png" height="80" class="d-inline-block align-top" alt=""></img>
 
-                            </a>
-                        </nav>
+                        
+
                     </div>
+
                 </div>
-                
+
             </div>
+
 
 
 

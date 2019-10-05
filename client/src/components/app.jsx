@@ -16,6 +16,7 @@ import Welcome from './welcome';
 import StripeRegister from './striperegister';
 import StripeRegisterPost from './striperegister2';
 import AboutMe2 from './screens/AboutUs/aboutUs2';
+import Portfolio from './screens/Portfolio/portfolio';
 
 
 
@@ -28,6 +29,7 @@ class Navigation extends Component {
                 <Fragment>
                     <Switch>
                         <Route exact path="/" component={Welcome} />
+                        <Route exact path="/portfolio" component={Portfolio} />
                         <Route exact path="/header" component={Header} />
                         <Route path="/register" component={RegisterScreen} />
                         <PrivateRoute path="/admin" component={BlogAdmin} />
