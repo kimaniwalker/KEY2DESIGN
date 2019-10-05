@@ -3,6 +3,7 @@ import '../../../utils/scss/pages/_supportTicket.scss';
 import Header2 from '../Header/header2'
 import { Redirect } from "react-router-dom";
 import useReactRouter from 'use-react-router';
+import { sendContacEmail } from '../../../services/contact';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
 import Footer from '../../footer';
 
@@ -61,7 +62,7 @@ const Ticket = () => {
                 status: status
                 
             }
-
+            
             console.log(object)
 
             let response = await fetch('api/workrequest', {
@@ -75,7 +76,7 @@ const Ticket = () => {
             
             
             
-            NotificationManager.success('Payment Submitted Successfully');
+            NotificationManager.success('Ticket Submitted Successfully');
             setTimeout(() => {
                 setPosted(true);
             }, 1000);
@@ -101,7 +102,7 @@ const Ticket = () => {
                         </div>
                         
                         <div className="row justify-content-center mb-5">
-                            <i class="fas fa-clipboard-list fa-2x text-light"></i>
+                            <i className="fas fa-clipboard-list fa-2x text-light"></i>
 
                         </div>
                         <form onSubmit={(e) => handleSubmit(e)}>

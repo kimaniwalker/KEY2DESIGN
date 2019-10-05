@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../../../src/utils/scss/pages/_header2.scss'
+import AuthButton from '../../auth/authButton';
 
 
 const Header = () => {
@@ -33,7 +34,7 @@ const Header = () => {
                         <a href="/"><img className="logo" src="../../../../images/icons/icon.png" alt="Logo"  height="65px" /></a>
 
                         <div className="navbar-buttons">
-                            <button className="button" type="button" name="button">SIGN IN</button>
+                            <AuthButton />
                             <span><i className="fas fa-2x fa-bars open-menu" onClick={handleOpen}></i></span>
                         </div>
                     </div>

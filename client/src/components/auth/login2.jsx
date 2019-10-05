@@ -71,52 +71,52 @@ const Login = () => {
           <div className="container-fluid">
 
             <div className="container pt-5">
-              <div id="formRow" className="row align-content-center pt-5">
-                <div className="col">
+              <div className="row justify-content-center">
+                <img src="../../../images/icons/icon.png" width="175px"></img>
+              </div>
 
-                  <form id="LoginCenterPositioning" onSubmit={e => login(e)}>
-                    <h2 className="text-light text-center">KATCHIN' TIA</h2>
-                    <div className="form-group">
-                      <label className="text-light" htmlFor="email">Email</label>
-                      <input
-                        id="email"
-                        className="form-control col-auto text-center"
-                        type="email"
-                        value={email}
-                        onChange={handleEmail}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label className="text-light" htmlFor="password">Password</label>
-                      <input
-                        id="password"
-                        className="form-control col-auto text-center"
-                        type="password"
-                        value={password}
-                        onChange={handlePassword}
-                        required
-                      />
-                    </div>
-                    {feedbackMessage ? (
-                      <p>{feedbackMessage}</p>
-                    ) : null}
-                    <div>
-                      <div id="LinkRow" className="row">
-                        <input type="submit" value="Login" className="btn clickable text-success" />
-                        <Link to="/api/auth/google" className="btn hasBeenClicked ml-3 text-primary">
-                          Google Sign In
+              <div id="formRow" className="row justify-content-center pt-5">
+
+                <form id="LoginCenterPositioning" onSubmit={e => login(e)}>
+
+                  <div className="form-group">
+                    <label className="text-light" htmlFor="email">Email</label>
+                    <input
+                      id="email"
+                      className="form-control col-auto text-center"
+                      type="email"
+                      value={email}
+                      onChange={handleEmail}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label className="text-light" htmlFor="password">Password</label>
+                    <input
+                      id="password"
+                      className="form-control col-auto text-center"
+                      type="password"
+                      value={password}
+                      onChange={handlePassword}
+                      required
+                    />
+                  </div>
+                  {feedbackMessage ? (
+                    <p>{feedbackMessage}</p>
+                  ) : null}
+                  <div>
+                    <div id="LinkRow" className="row justify-content-center">
+                      <input type="submit" value="Login" className="btn clickable text-success" />
+                      <Link to="/register" className="btn hasBeenClicked ml-3 text-warning">
+                        Register
           </Link>
-                        <Link to="/users/register" className="btn hasBeenClicked ml-3 text-warning">
-                          Register
-          </Link>
-                      </div>
-
                     </div>
 
+                  </div>
 
-                  </form>
-                </div>
+
+                </form>
+
               </div>
 
             </div>

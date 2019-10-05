@@ -87,7 +87,7 @@ const CheckoutForm = (props) => {
                         </div>
                         
                         <div className="row justify-content-center mb-5">
-                            <i class="fas fa-donate fa-2x text-light"></i>
+                            <i className="fas fa-donate fa-2x text-light"></i>
 
                         </div>
                         <form onSubmit={(e) => handleSubmit(e)}>

@@ -13,13 +13,13 @@ const Footer = () => {
 
                         
                         <p>COPYRIGHT 2019 KEY2DESIGN LLC</p>
-                        <div class="w-100"></div>
+                        <div className="w-100"></div>
                         
                            <a href="mailto:admin@key2design.io"><i className="fas fa-envelope-open-text text-light"></i></a>
                         <a href="tel:+12056038724"><i className="fas fa-phone-volume text-light"></i></a>
                         <a href="#"><i className="fab fa-instagram text-light"></i></a>
                         <a href="#"><i className="fab fa-facebook text-light"></i></a>
-                        <a href="#"><i className="fas fa-money-check-alt text-light"></i></a> 
+                        <a href="payment"><i className="fas fa-money-check-alt text-light"></i></a> 
                         
                         </div>
 
