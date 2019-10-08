@@ -32,9 +32,6 @@ const Tickets = () => {
         <Fragment>
 
         
-        <h1>Testing</h1>
-
-        
 
 <table className="table table-bordered table-striped table-responsive table-hover thead-dark">
   <thead>

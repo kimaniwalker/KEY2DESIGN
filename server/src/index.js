@@ -15,12 +15,12 @@ const CLIENT_PATH = join(__dirname, '../../client');
 let app = express();
 
 /* Make all http request https */
-/* app.use(function(req, res, next) {
+app.use(function(req, res, next) {
     if ((req.get('X-Forwarded-Proto') !== 'https')) {
       res.redirect('https://' + req.get('Host') + req.url);
     } else
       next();
-  }); */
+  });
 app.use(morgan('combined', { stream: winston.stream }));
 
 app.use(morgan('dev'));

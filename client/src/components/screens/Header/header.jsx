@@ -35,7 +35,7 @@ const Header = () => {
 
                         <div className="navbar-buttons">
                             <AuthButton />
-                            <span><i className="fas fa-2x fa-bars open-menu" onClick={handleOpen}></i></span>
+                            <span><i className="fas fa-2x fa-bars open-menu" onClick={handleOpen()}></i></span>
                         </div>
                     </div>
 
@@ -43,12 +43,11 @@ const Header = () => {
                     <div className="overlay bg-dark">
                         <nav className="overlay-menu">
                             <ul>
-                            <li className="close-menu" onClick={handleClose}><i className="fas fa-times"></i></li>
+                            <li className="close-menu" onClick={handleClose()}><i className="fas fa-times"></i></li>
                                 <li><a href="/">Home</a></li>
                                 <li><a href="/aboutus">About Us</a></li>
                                 <li><a href="/payment">Make A Payment</a></li>
                                 <li><a href="/ticket">Create A Ticket</a></li>
-                                <li><a href="#">Portfolio</a></li>
                                 <li><a href="/contact">Contact Us</a></li>
                                 
                             </ul>
