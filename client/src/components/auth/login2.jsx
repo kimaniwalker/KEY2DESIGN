@@ -70,10 +70,10 @@ const Login = () => {
         <section className="container-fluid awesome">
           <div className="container-fluid">
 
+          
+
             <div className="container pt-5">
-              <div className="row justify-content-center">
-                <img src="../../../images/icons/icon.png" width="175px"></img>
-              </div>
+              
 
               <div id="formRow" className="row justify-content-center pt-5">
 
