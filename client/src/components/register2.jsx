@@ -14,7 +14,7 @@ const Register = () => {
     const [userPosted, setUserPosted] = useState(false);
     const { history, location, match } = useReactRouter();
 
-    const { from } = location.state || { from: { pathname: "/home" } };
+    const { from } = location.state || { from: { pathname: "/" } };
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
@@ -46,11 +46,11 @@ const Register = () => {
     }
 
     const cloudinaryUpload = async () => {
-        let fd = new FormData();
-        fd.append('file', selectedfile, selectedfile.name);
+        /* let fd = new FormData();
+        fd.append('file', selectedfile, selectedfile.name); */
 
         try {
-            let response = await fetch('https://api.cloudinary.com/v1_1/lokiddo/image/upload?upload_preset=muuqonjl', {
+            /* let response = await fetch('https://api.cloudinary.com/v1_1/lokiddo/image/upload?upload_preset=muuqonjl', {
                 method: 'POST',
                 body: fd
             });
@@ -58,13 +58,13 @@ const Register = () => {
             let data = await response.json();
             console.log(data);
             setData([data]);
-            console.log(data.url);
+            console.log(data.url); */
 
             let object = {
                 password: password,
                 first_name: first_name,
                 last_name: last_name,
-                profile_picture_link: (data.url),
+                /* profile_picture_link: (data.url), */
                 email: email,
             };
             console.log(object);
@@ -78,7 +78,7 @@ const Register = () => {
             NotificationManager.success("User Created!  Now login");
             setTimeout(() => {
                 setUserPosted(true);
-            }, 1000);
+            }, 500);
 
         } catch (e) {
             console.log(e);
@@ -144,9 +144,9 @@ const Register = () => {
                                     </div>
 
                                     <div>
-                                        <input type="file"
+                                        {/* <input type="file"
                                             width="10px"
-                                            onChange={handleSelectedFile} formEncType="application/x-www-form-urlencoded" name="file"></input>
+                                            onChange={handleSelectedFile} formEncType="application/x-www-form-urlencoded" name="file"></input> */}
 
                                         <button className="btn btn-primary mt-2" onClick={event => handleSubmit(event)}>
                                             Submit
