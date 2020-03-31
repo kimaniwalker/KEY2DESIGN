@@ -81,10 +81,10 @@ const logger = winston.createLogger({
 logger.stream = {
     write: function (message, encoding) {
 
-        logger.info('Logging Info' + message + encoding);
+        /* logger.info('Logging Info' + message + encoding);
         logger.debug('Debugging' + message + encoding);
         logger.error('Logging Errors' + message + encoding);
-        logger.warn('Logging HTTP Request' + message + encoding);
+        logger.warn('Logging HTTP Request' + message + encoding); */
         
 
         
