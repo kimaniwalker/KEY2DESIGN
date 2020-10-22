@@ -70,6 +70,8 @@
         opacity: 1;
         visibility: visible;
         height: 100%;
+        
+
       }
 
       
@@ -99,6 +101,7 @@
         position: relative;
         opacity: 0;
         margin-bottom: 20px;
+        padding: 20px;
       }
       .overlay ul li a {
         display: block;
@@ -172,17 +175,27 @@
       .button:hover {
         transform: scale(1.1);
       }
+      
+      @media (max-width: 1280px) {
+        .overlay nav {
+            letter-spacing: 20px;
+            font-size: 2vw;
+        }
+      }
 
       @media (max-width: 790px) {
         .overlay nav {
-            letter-spacing: 30px;
+            letter-spacing: 20px;
+            font-size: 4vw;
         }
       }
 
       @media (max-width: 670px) {
         .overlay nav {
             letter-spacing: 20px;
+            
         }
+
       }
       @media (max-width: 550px) {
         .overlay nav {

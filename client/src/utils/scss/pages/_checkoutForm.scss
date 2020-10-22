@@ -6,25 +6,14 @@
 
 
 
-.checkoutForm {
+.checkoutForm{
 
-    background-image: url("../../../../images/icons/6eb3fa65-76b0-42ba-82a8-0e0a418e1556.jpg");
-    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    margin-top: 100px;
 
-    #StripeElement {
-        background: lightgray;
-        color: white;
-        padding: 5px;
-        border-radius: 20px;
-        border:2px solid #1976D2;
     
-    }
 
-    h2 {
-        font-family: 'Heebo', sans-serif;
-        font-weight: 100 ;
-        font-size: 4vw;
-    }
 
     .input-group {
         border: 0;
@@ -32,46 +21,51 @@
         width: 100%;
         font-size: 3vw;
         line-height: 35px;
-        height: 50px;
+        height: 10vh;
         text-align: center;
-        padding: 10px;
+        padding: 50px;
         background: transparent;
         color: #BBDEFB;
         font-family: 'Heebo', sans-serif;
         font-weight: 100;
+    }
+
+    .input-group2 {
+        border: 0;
+        border-bottom: 2px solid #1976D2;
+        width: 100%;
+        font-size: 3vw;
+        line-height: 35px;
+        height: 35vh;
+        text-align: center;
+        padding: 50px;
+        background: transparent;
+        color: #BBDEFB;
+        font-family: 'Heebo', sans-serif;
+        font-weight: 100;
+        display: block;
+        overflow: hidden;
+        resize: vertical;
         
+    }
+
+    
+
+    h2 {
+        font-family: 'Heebo', sans-serif;
+        color: $dark;
+        font-weight: 100 ;
+        font-size: 4vw;
     }
 
     .btn {
-        width: 100%;
+        width: 75%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
-    #FormBg {
-        border: 1;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 20px;
-        
-        
-        
-    }
-
-    @media only screen and (max-width : 768px) {
-        
-        #FormBg {
-            border: 1;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 20px;
-            width: 75%;
-            display: block;
-            
-            
-        }
-
-        }
-
-
+    
 
 
 
 }
+

@@ -4,8 +4,8 @@ import { Redirect } from "react-router-dom";
 import useReactRouter from 'use-react-router';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
 
-import '../../../utils/scss/pages/_contact';
-import Header2 from '../Header/header2';
+import '../../../utils/scss/pages/_contactScreen';
+import Header from '../Header/header';
 import Footer from '../../footer';
 
 
@@ -37,6 +37,7 @@ const Contact2 = (props) => {
                 NotificationManager.success('Submitted Successfully');
             setTimeout(() => {
                 setSubmitted(true);
+                console.log('Submitted')
             }, 1000);
 
             }).catch((err) => {
@@ -51,10 +52,10 @@ const Contact2 = (props) => {
     } else
     return (
         <Fragment>
-            <Header2 />
-        <main className="contact">
+            <Header />
+        <main className="contactScreen">
             <NotificationContainer />
-            <div className="container-fluid">
+            <div className="container-fluid mt-4">
                 <div className="row justify-content-center pt-4">
                 <i className="fab fa-wpforms fa-2x text-light"></i>
                 </div>
@@ -86,7 +87,10 @@ const Contact2 = (props) => {
                 </div>
             </div>
         </main>
-        <Footer />
+        
+         <Footer />   
+        
+        
         
         </Fragment>
 

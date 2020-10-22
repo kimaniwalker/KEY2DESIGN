@@ -35,7 +35,7 @@ const Contact = (props) => {
             .then(() => {
                 NotificationManager.success('Submitted Successfully');
             setTimeout(() => {
-                setSubmitted(true);
+                /* setSubmitted(true); */
             }, 1000);
 
             }).catch((err) => {

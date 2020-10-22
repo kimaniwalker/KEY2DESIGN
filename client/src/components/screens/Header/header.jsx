@@ -38,7 +38,7 @@ const Header = () => {
                             <span><i className="fas fa-2x fa-bars open-menu" onClick={handleOpen()}></i></span>
                         </div>
                     </div>
-
+ 
 
                     <div className="overlay bg-dark">
                         <nav className="overlay-menu">

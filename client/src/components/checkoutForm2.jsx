@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import '../utils/scss/pages/_checkoutForm.scss';
 import { injectStripe } from 'react-stripe-elements';
 import { postCharge } from '../services/stripeService';
@@ -6,19 +6,25 @@ import CardSection from './cardSection';
 import { Redirect } from "react-router-dom";
 import useReactRouter from 'use-react-router';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
+import { loadStripe } from '@stripe/stripe-js';
+import Header from './screens/Header/header';
+import Footer from './footer';
 
 
 const CheckoutForm = (props) => {
 
 
     const [customerName, setcustomerName] = useState('');
+    const [quantity,setQuantitiy] = useState(1);
     const [amount, setamount] = useState('');
     const [submitted, setsubmitted] = useState(false);
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [description, setDescription] = useState('');
     const [paymentPosted, setPaymentPosted] = useState(false);
+    const [sessionId,setSessionId] = useState('');
     const { history, location, match } = useReactRouter();
+    const stripePromise = loadStripe('pk_test_E1w7nEQKNaAPqAdDPdgFogN000yif31NpU');
 
     const { from } =  { from: { pathname: "/" } };
     
@@ -48,20 +54,15 @@ const CheckoutForm = (props) => {
         setDescription(e.target.value);
     }
 
-    const handleSubmit = async (e) => {
+    /* const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             setsubmitted(true);
             let token = await props.stripe.createToken({ name: customerName });
             await postCharge({ id: token.token.id, amount, description, phone, email });
+
+
             
-            console.log(token.token.id);
-            console.log(customerName);
-            console.log(amount);
-            console.log(submitted);
-            console.log(email);
-            console.log(description);
-            console.log(phone);
             NotificationManager.success('Payment Submitted Successfully');
             setTimeout(() => {
                 setPaymentPosted(true);
@@ -70,27 +71,59 @@ const CheckoutForm = (props) => {
             console.log(e);
             NotificationManager.error(e);
         }
+    } */
+
+    const handleCheckout = async (e) => {
+        
+        e.preventDefault();
+
+        try {
+            let res = await fetch('/api/donate/create-checkout-session', {
+                method: 'POST',
+                body: JSON.stringify({ amount }),
+                headers: new Headers({ "Content-Type": "application/json" })
+
+            });
+            let sessionResponse = await res.json();
+            console.log(sessionResponse)
+            setSessionId(sessionResponse);
+            console.log('Redirecting To Stripe ! See ya later' + sessionId)
+            const stripe = await stripePromise;
+            const { error } = await stripe.redirectToCheckout({
+            sessionId: sessionResponse.id
+    });
+
+            
+            
+        } catch (e) {
+            console.log(e)
+        }
     }
+
+
 
 
     if (paymentPosted) {
         return <Redirect to={from} />
     } else
     return (
+        <Fragment>
+        <Header />
         <div className="checkoutForm">
+            
             <div className="container-fluid">
             <NotificationContainer />
                 <div className="row pt-3 pb-3 justify-content-center">
-                    <div id="FormBg" className="col-lg-5 col-md-6 col-sm-7 bg-dark pt-4">
-                        <div className="row justify-content-center text-light pb-2">
+                    <div id="FormBg" className="col-lg-5 col-md-6 col-sm-7 pt-4">
+                        <div className="row justify-content-center text-dark pb-2">
                             <h2>Make A Payment</h2>
                         </div>
                         
                         <div className="row justify-content-center mb-5">
-                            <i className="fas fa-donate fa-2x text-light"></i>
+                            <i className="fas fa-donate fa-2x text-dark"></i>
 
                         </div>
-                        <form onSubmit={(e) => handleSubmit(e)}>
+                        <form onSubmit={(e) => handleCheckout(e)}>
 
                             <div className="row mb-4 ml-3 mr-3">
                                 <input className="input-group"
@@ -121,13 +154,13 @@ const CheckoutForm = (props) => {
                                 className="input-group"
                                 onChange={handleDescription}
                                 value={description}
-                                placeholder="Description">
+                                placeholder="Short Description">
                                 </input>
                             </div>
 
 
 
-                            <div className="row mb-4 ml-3 mr-3n pb-4">
+                            <div className="row mb-4 ml-3 mr-3 pb-4">
                                 <input className="input-group"
                                     value={amount}
                                     onChange={handleamount}
@@ -135,11 +168,11 @@ const CheckoutForm = (props) => {
                             </div>
 
 
-                            <CardSection />
+                            {/* <CardSection /> */}
 
 
-                            <div className="row mb-4 mr-3 ml-3 pt-4 pb-3">
-                                <button type="submit" className="btn btn-info mt-2">SUBMIT</button>
+                            <div className="row justify-content-center mb-4 mr-3 ml-3 pt-4 pb-3">
+                                <button type="submit" className="btn btn-info mt-2">Checkout With Stripe</button>
                             </div>
 
 
@@ -155,8 +188,11 @@ const CheckoutForm = (props) => {
                 </div>
 
             </div>
-
+            
+            <Footer />
         </div>
+        
+        </Fragment>
 
     );
 

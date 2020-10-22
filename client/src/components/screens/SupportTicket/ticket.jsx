@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../../utils/scss/pages/_supportTicket.scss';
-import Header2 from '../Header/header2'
+import Header from '../Header/header'
 import { Redirect } from "react-router-dom";
 import useReactRouter from 'use-react-router';
 import { sendContacEmail } from '../../../services/contact';
@@ -13,16 +13,18 @@ const Ticket = () => {
 
 
     const [Name, setName] = useState('');
-    const [severity, setSeverity] = useState('');
+    const [severity, setSeverity] = useState('1 - Critical');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [request, setRequest] = useState('');
     const [posted, setPosted] = useState(false);
-    const [status, setStatus] = useState('WIP');
+    const [status, setStatus] = useState('NEW');
+    const [message, setMessage] = useState('');
+
     const { history, location, match } = useReactRouter();
 
-    const { from } =  { from: { pathname: "/" } };
-    
+    const { from } = { from: { pathname: "/" } };
+
 
 
     const handleName = (e) => {
@@ -31,6 +33,7 @@ const Ticket = () => {
 
     const handleSeverity = (e) => {
         setSeverity(e.target.value);
+        
     }
 
     const handlePosted = (e) => {
@@ -47,6 +50,8 @@ const Ticket = () => {
 
     const handleRequest = (e) => {
         setRequest(e.target.value);
+        setMessage(e.target.value);
+        
     }
 
     const handleSubmit = async (e) => {
@@ -59,10 +64,10 @@ const Ticket = () => {
                 phone: phone,
                 request: request,
                 severity: severity,
-                status: status
-                
+                status: status,
+
             }
-            
+
             console.log(object)
 
             let response = await fetch('api/workrequest', {
@@ -73,9 +78,20 @@ const Ticket = () => {
             let data = await response.json();
             console.log(data);
 
-            
-            
-            
+            sendContacEmail(Name,email,message)
+            .then(() => {
+                NotificationManager.success('Submitted Successfully');
+            setTimeout(() => {
+                console.log('Submitted')
+            }, 1000);
+
+            }).catch((err) => {
+                NotificationManager.error(err);
+                
+                console.log(err);
+            })
+
+
             NotificationManager.success('Ticket Submitted Successfully');
             setTimeout(() => {
                 setPosted(true);
@@ -90,92 +106,107 @@ const Ticket = () => {
     if (posted) {
         return <Redirect to={from} />
     } else
-    return (
-        <div className="checkoutForm">
-            <Header2 />
-            <div className="container-fluid">
-            <NotificationContainer />
-                <div className="row pt-3 pb-3 justify-content-center">
-                    <div id="FormBg" className="col-lg-5 col-md-6 col-sm-7 bg-dark pt-4">
-                        <div className="row justify-content-center text-light pb-2">
-                            <h2>Submit A Ticket</h2>
-                        </div>
+        return (
+            <div className="createTicket">
+                <Header />
+                <div className="container-fluid pt-3">
+                    <NotificationContainer />
+                    <div className="row justify-content-center pt-3 pb-3">
+                        <div id="" className="col-xl-6 col-lg-6 col-md-6 col-sm-7 pt-4">
+                            <div className="row justify-content-center text-light pb-2">
+                                <h2>Submit A Ticket</h2>
+                            </div>
+
+                            <div className="row justify-content-center mb-5">
+                                <i className="fas fa-clipboard-list fa-2x text-dark"></i>
+
+                            </div>
+                            <form onSubmit={(e) => handleSubmit(e)}>
+
+                                <div className="row mb-4 ml-3 mr-3">
+                                    <input className="input-group"
+                                        value={Name}
+                                        onChange={handleName}
+                                        placeholder="Full Name"
+                                    />
+                                </div>
+
+                                <div className="row mb-4 ml-3 mr-3">
+                                    <input className="input-group"
+                                        value={email}
+                                        onChange={handleEmail}
+                                        placeholder="Email"
+                                    />
+                                </div>
+
+                                <div className="row mb-4 ml-3 mr-3">
+                                    <input className="input-group"
+                                        value={phone}
+                                        onChange={handlePhone}
+                                        placeholder="Phone"
+                                    />
+                                </div>
+
+                                <div className="row mb-4 ml-3 mr-3">
+                                    <textarea className="input-group2"
+                                        value={request}
+                                        onChange={handleRequest}
+                                        placeholder="Description"
+                                    />
+                                </div>
+
+
+                                
+
+                                
+
                         
-                        <div className="row justify-content-center mb-5">
-                            <i className="fas fa-clipboard-list fa-2x text-light"></i>
+
+                                
+                                <div className="row mb-4 ml-3 mr-3 pb-4">
+
+                                    <div className="form-group">
+                                        <label htlmfor="severitySelect">Severity</label>
+                                        <select className="form-control" id="exampleFormControlSelect1"
+                                        value={severity}
+                                        onChange={handleSeverity}>
+                                            <option>1 - Critical</option>
+                                            <option>2 - Severe</option>
+                                            <option>3 - Major</option>
+                                            <option>4 - Normal</option>
+                                            <option>5 - Enhancement</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                                <div className="row justify-content-center mb-4 mr-3 ml-3 pt-4 pb-3">
+                                    <button type="submit" className="btn btn-info mt-2 ">SUBMIT</button>
+                                </div>
+
+
+
+                            </form>
+
+
 
                         </div>
-                        <form onSubmit={(e) => handleSubmit(e)}>
-
-                            <div className="row mb-4 ml-3 mr-3">
-                                <input className="input-group"
-                                    value={Name}
-                                    onChange={handleName}
-                                    placeholder="Full Name"
-                                />
-                            </div>
-
-                            <div className="row mb-4 ml-3 mr-3">
-                                <input className="input-group"
-                                    value={email}
-                                    onChange={handleEmail}
-                                    placeholder="Email"
-                                />
-                            </div>
-
-                            <div className="row mb-4 ml-3 mr-3">
-                                <input className="input-group"
-                                    value={phone}
-                                    onChange={handlePhone}
-                                    placeholder="Phone"
-                                />
-                            </div>
-
-                            <div className="row mb-4 ml-3 mr-3">
-                                <textarea
-                                cols="30" rows="10"
-                                className="form-group"
-                                onChange={handleRequest}
-                                value={request}
-                                placeholder="Request">
-                                </textarea>
-                            </div>
-
-
-
-                            <div className="row mb-4 ml-3 mr-3n pb-4">
-                                <input className="input-group"
-                                    value={severity}
-                                    onChange={handleSeverity}
-                                    placeholder="Business Justification" />
-                            </div>
-
-
-
-
-                            <div className="row mb-4 mr-3 ml-3 pt-4 pb-3">
-                                <button type="submit" className="btn btn-info mt-2">SUBMIT</button>
-                            </div>
-
-
-
-                        </form>
 
 
 
                     </div>
-                    
-
 
                 </div>
 
+
+                <Footer />
             </div>
 
-            
-<Footer />
-        </div>
-
-    );
+        );
 
 }
 

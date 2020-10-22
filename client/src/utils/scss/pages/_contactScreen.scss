@@ -1,0 +1,37 @@
+@import "../variables"; 
+@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Heebo:100&display=swap');
+
+
+.contactScreen {
+    background-image: url(../../../../images/home/homepage.png);
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    
+    
+    h1{
+        font-family: 'Heebo', sans-serif;
+        font-weight: 100 ;
+        font-size: 6vw;
+    }
+
+    h2 {
+        font-family: 'Heebo', sans-serif;
+        font-style: bold;
+        font-size: 2vw;
+    }
+
+    .form-group {
+        color: #BBDEFB;
+        font-family: 'Heebo', sans-serif;
+        font-weight: 100;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+    }
+
+    .btn {
+        width: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+};

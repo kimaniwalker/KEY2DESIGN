@@ -86,7 +86,7 @@ padding-top: 13px;
 
 </body></html>`;
 
-  logger.info('Sending This In Contact Form - ' + JSON.stringify(messageBody))
+  /* logger.info('Sending This In Contact Form - ' + JSON.stringify(messageBody)) */
 
   sendEmail('admin@key2design.io', 'no-reply-support@key2design.io', 'New Contact Form Submission', messageBody)
     .then((response) => {
