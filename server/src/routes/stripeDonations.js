@@ -146,6 +146,7 @@ router.post('/create-checkout-session', async (req, res) => {
           unit_amount: req.body.amount * 100,
         },
         quantity: 1,
+        description: req.body.description,
       },
     ],
     mode: 'payment',

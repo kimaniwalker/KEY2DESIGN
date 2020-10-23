@@ -3,7 +3,7 @@ import '../../../utils/scss/pages/_supportTicket.scss';
 import Header from '../Header/header'
 import { Redirect } from "react-router-dom";
 import useReactRouter from 'use-react-router';
-import { sendContacEmail } from '../../../services/contact';
+import { sendContacEmail, sendContactEmailTicket } from '../../../services/contact';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
 import Footer from '../../footer';
 
@@ -33,7 +33,7 @@ const Ticket = () => {
 
     const handleSeverity = (e) => {
         setSeverity(e.target.value);
-        
+
     }
 
     const handlePosted = (e) => {
@@ -51,7 +51,7 @@ const Ticket = () => {
     const handleRequest = (e) => {
         setRequest(e.target.value);
         setMessage(e.target.value);
-        
+
     }
 
     const handleSubmit = async (e) => {
@@ -78,18 +78,20 @@ const Ticket = () => {
             let data = await response.json();
             console.log(data);
 
-            sendContacEmail(Name,email,message)
-            .then(() => {
-                NotificationManager.success('Submitted Successfully');
-            setTimeout(() => {
-                console.log('Submitted')
-            }, 1000);
+            sendContactEmailTicket(Name, email, message, phone,
+                severity,
+                status)
+                .then(() => {
+                    NotificationManager.success('Submitted Successfully');
+                    setTimeout(() => {
+                        console.log('Submitted')
+                    }, 1000);
 
-            }).catch((err) => {
-                NotificationManager.error(err);
-                
-                console.log(err);
-            })
+                }).catch((err) => {
+                    NotificationManager.error(err);
+
+                    console.log(err);
+                })
 
 
             NotificationManager.success('Ticket Submitted Successfully');
@@ -156,20 +158,20 @@ const Ticket = () => {
                                 </div>
 
 
-                                
 
-                                
 
-                        
 
-                                
+
+
+
+
                                 <div className="row mb-4 ml-3 mr-3 pb-4">
 
                                     <div className="form-group">
                                         <label htlmfor="severitySelect">Severity</label>
                                         <select className="form-control" id="exampleFormControlSelect1"
-                                        value={severity}
-                                        onChange={handleSeverity}>
+                                            value={severity}
+                                            onChange={handleSeverity}>
                                             <option>1 - Critical</option>
                                             <option>2 - Severe</option>
                                             <option>3 - Major</option>

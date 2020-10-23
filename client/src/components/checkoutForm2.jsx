@@ -80,7 +80,7 @@ const CheckoutForm = (props) => {
         try {
             let res = await fetch('/api/donate/create-checkout-session', {
                 method: 'POST',
-                body: JSON.stringify({ amount }),
+                body: JSON.stringify({ amount, description }),
                 headers: new Headers({ "Content-Type": "application/json" })
 
             });
