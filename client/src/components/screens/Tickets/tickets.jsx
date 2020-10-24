@@ -33,44 +33,30 @@ const Tickets = () => {
 
         
 
-<table className="table table-bordered table-striped table-responsive table-hover thead-dark">
-  <thead>
-    <tr>
-      <th scope="col-auto">Id</th>
-      <th scope="col-auto">Name</th>
-      <th scope="col-auto">Phone</th>
-      <th scope="col-auto">Email</th>
-      <th scope="col-auto">Request</th>
-      <th scope="col-auto">Severity</th>
-      <th scope="col-auto">Status</th>
-      <th scope="col-auto">Created</th>
-      <th scope="col-auto">Completed</th>
-    </tr>
-  </thead>
 
-
-
-  <tbody>
 {tickets.map((ticket, id) =>
-            
 
-    <tr key={id}>
-      <th scope="row">{ticket.id}</th>
-      <td>{ticket.name}</td>
-      <td>{ticket.phone}</td>
-      <td>{ticket.email}</td>
-      <td>{ticket.request}</td>
-      <td>{ticket.severity}</td>
-      <td>{ticket.status}</td>
-      <td>{ticket._created}</td>
-      <td>{ticket._completed}</td>
+<div key={id} class="accordion" id="accordionExample">
+<div class="card">
+  <div class="card-header" id="headingOne">
+    <h2 class="mb-0">
+      <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Ticket Number:{ticket.id}
+        Severity: {ticket.severity}
+        Status: {ticket.status}
+      </button>
+    </h2>
+  </div>
 
-    </tr>
-             )}
-  </tbody>
-
-
-</table>
+  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div class="card-body">
+      {ticket.request}
+      {ticket._created}
+    </div>
+  </div>
+</div>
+         </div>   
+)}
 
             
         
