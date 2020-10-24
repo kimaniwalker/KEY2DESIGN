@@ -3,6 +3,7 @@ import { createCipher, createDecipher } from 'crypto';
 const ALGORITHM = 'aes-256-ctr';
 const SECRET = 'aardvark';
 
+
 function encode(value) {
     const cipher = createCipher(ALGORITHM, SECRET);
     let encoded = cipher.update(`${uuidv4()}_${value}`, 'ascii', 'base64');
