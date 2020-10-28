@@ -1,20 +1,9 @@
 const express = require('express');
 const db = require('../config/dbFiles/work_request');
-import logger from '../middleware/winston';
 
 
 
 const router = express.Router();
-
-router.use(function (req, res, next) {
-    logger.debug(
-        '-The IP IS-' + req.ip +
-        '-Body-' + JSON.stringify(req.body) +
-        '-Base URL-' + req.baseUrl +
-        '-HostName-' + req.hostname +
-        '-Method-' + req.method);
-    next();
-});
 
 router.get('/', async (req, res, next) => {
 
@@ -59,7 +48,6 @@ router.post('/', async (req, res, next) => {
 
 
     try {
-        /* logger.info('Request Object' +  JSON.stringify(insertObject)); */
         
         
         let results = await db.insert(insertObject);
@@ -69,7 +57,6 @@ router.post('/', async (req, res, next) => {
 
 
     } catch (err) {
-        /* logger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip} - `); */
         res.status(500).send(err);
     }
 })
@@ -85,15 +72,12 @@ router.put('/', async (req, res, next) => {
 
     console.log(insertObject);
 
-    /* logger.info('Request Object' +  JSON.stringify(insertObject)); */
-
     try {
         let results = await db.update(insertObject);
         console.log(results);
         res.status(201).json(results);
 
     } catch (err) {
-        logger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip} - `)
         res.status(500).send(err);
     }
 })

@@ -2,20 +2,12 @@ import { Router } from 'express';
 import { tokenMiddleware, isLoggedIn } from '../middleware/auth.mw';
 import { generateHash } from "../utils/security";
 import Table from "../table";
-import logger from '../middleware/winston';
 
 
 let router = Router();
 let userTable = new Table("users");
 
-router.use(function(req,res,next){
-  logger.debug('Sent From: ' + req.ip + 
-  'Request Type: ' + req.method +
-  'API URL: ' + req.baseUrl +
-  'Host Name: ' +
-  'Request Object: ' +  JSON.stringify(req.body));  
-  next();
-  });
+
 
 router.get('/me', tokenMiddleware, isLoggedIn, async (req, res) => {
   

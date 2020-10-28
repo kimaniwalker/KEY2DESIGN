@@ -1,18 +1,11 @@
 import { Router } from 'express';
 const bodyParser = require('body-parser');
 import { sendEmail } from '../utils/mail';
-import logger from '../middleware/winston';
+
 
 let router = Router();
 
-router.use(function (req, res, next) {
-  logger.debug('Sent From: ' + req.ip +
-    'Request Type: ' + req.method +
-    'API URL: ' + req.baseUrl +
-    'Host Name: ' +
-    'Request Object: ' + JSON.stringify(req.body));
-  next();
-});
+
 
 router.post('/', (req, res, next) => {
 
@@ -86,15 +79,14 @@ padding-top: 13px;
 
 </body></html>`;
 
-  /* logger.info('Sending This In Contact Form - ' + JSON.stringify(messageBody)) */
+ 
 
   sendEmail('admin@key2design.io', 'no-reply-support@key2design.io', 'New Contact Form Submission', messageBody)
     .then((response) => {
       console.log(response);
       res.sendStatus(201);
     }).catch((err) => {
-      logger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip} - `);
-      next('this is an error' + err);
+      console.log(err)
     });
 })
 
@@ -159,15 +151,15 @@ padding-top: 13px;
   
   </html>`;
 
-  /* logger.info('Sending This In Contact Form - ' + JSON.stringify(messageBody)) */
+  
 
   sendEmail('admin@key2design.io', 'no-reply-support@key2design.io', 'New Contact Form Submission', messageBody)
     .then((response) => {
       console.log(response);
       res.sendStatus(201);
     }).catch((err) => {
-      logger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip} - `);
-      next('this is an error' + err);
+      
+      console.log(err)
     });
 })
 
@@ -199,23 +191,6 @@ router.post('/webhook', bodyParser.raw({ type: 'application/json' }), (req, res,
   // Return a response to acknowledge receipt of the event
   response.json({ received: true });
 
-
-  /* logger.info('Sending This In Contact Form - ' + JSON.stringify(messageBody))
-
-  
-  
-  
-  
-  
-  
-  sendEmail('admin@key2design.io', 'no-reply-admin@key2design.io', 'New Contact Form Submission', messageBody)
-      .then((response) => {
-          console.log(response);
-          res.sendStatus(201);
-      }).catch((err) => {
-          logger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip} - `);
-          next('this is an error' + err);
-      }); */
 })
 
 export default router;

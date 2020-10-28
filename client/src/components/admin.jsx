@@ -35,27 +35,20 @@ const BlogAdmin = () => {
             </div>
             <div className="wrapper">
                 <nav id="sidebar">
-                    <div className="sidebar-header">
-                        <span><img src="../../images/footer/logo.png" width="125px"></img></span>
-                    </div>
 
                     <ul className="list-unstyled components">
-                        <p>Admin Portal</p>
-                        <li className="active">
-                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Blogs</a>
-                            <ul className="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="#">Create Blog</a>
-                                </li>
-                                <li>
-                                    <a  href="#">View Blogs</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Work Requests</a>
-                        </li>
+                        <div className="row justify-content-center">
+                          <span><img src="../../images/footer/logo.png" width="125px"></img></span>  
+                        </div>
+                        
                     </ul>
+                    <ul className="list-unstyled components">
+                        <div className="row justify-content-center">
+                          <span>More Feautes</span>  
+                        </div>
+                        
+                    </ul>
+                    
                 </nav>
 
 

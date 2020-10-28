@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import '../../../utils/scss/pages/_supportTicket.scss';
 import Header from '../Header/header'
 import { Redirect } from "react-router-dom";
@@ -109,8 +109,10 @@ const Ticket = () => {
         return <Redirect to={from} />
     } else
         return (
-            <div className="createTicket">
+            <Fragment>
                 <Header />
+            <div className="createTicket">
+                
                 <div className="container-fluid pt-3">
                     <NotificationContainer />
                     <div className="row justify-content-center pt-3 pb-3">
@@ -207,6 +209,7 @@ const Ticket = () => {
 
                 <Footer />
             </div>
+            </Fragment>
 
         );
 

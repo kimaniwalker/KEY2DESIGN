@@ -4,7 +4,6 @@ import express from 'express';
 import morgan from 'morgan';
 import routes from './routes';
 import stateRouting from './middleware/routing.mw';
-const winston = require('./middleware/winston');
 import configurePassport from './config/passport';
 import fileUpload from 'express-fileupload';
 
@@ -21,8 +20,6 @@ let app = express();
     } else
       next();
   }); */
-app.use(morgan('combined', { stream: winston.stream }));
-
 app.use(morgan('dev'));
 app.use(express.static(CLIENT_PATH));
 app.use(express.json());

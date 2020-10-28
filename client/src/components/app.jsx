@@ -11,8 +11,6 @@ import Contact2 from './screens/ContactUs/contact2';
 import Donate from './donate';
 import RegisterScreen from './register2';
 import Welcome from './welcome';
-import StripeRegister from './striperegister';
-import StripeRegisterPost from './striperegister2';
 import AboutMe2 from './screens/AboutUs/aboutUs2';
 import Portfolio from './screens/Portfolio/portfolio';
 
@@ -35,8 +33,6 @@ class Navigation extends Component {
                         <Route path="/logout" component={Logout} />
                         <Route exact path="/contact" component={Contact2} />
                         <Route exact path="/payment" component={Donate} /> 
-                        <Route path="/striperegister" component={StripeRegister} />
-                        <Route path="/striperegisterpost" component={StripeRegisterPost} />
                         <Route path="/me" component={UserDetailScreen} />
                         <Route path="/tickets" component={Tickets} />
                         <Route path="/ticket" component={Ticket} />
