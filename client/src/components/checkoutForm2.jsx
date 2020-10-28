@@ -24,7 +24,7 @@ const CheckoutForm = (props) => {
     const [paymentPosted, setPaymentPosted] = useState(false);
     const [sessionId,setSessionId] = useState('');
     const { history, location, match } = useReactRouter();
-    const stripePromise = loadStripe('pk_test_E1w7nEQKNaAPqAdDPdgFogN000yif31NpU');
+    const stripePromise = loadStripe('pk_live_85nouWDDrDahUYvpRTLQ58Fv0041Fia2Uj');
 
     const { from } =  { from: { pathname: "/" } };
     

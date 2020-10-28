@@ -68,8 +68,8 @@ router.post('/create-checkout-session', async (req, res) => {
       },
     ],
     mode: 'payment',
-    success_url: `http://localhost:3000/success/?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `http://localhost:3000/cancel/?session_id={CHECKOUT_SESSION_ID}`,
+    success_url: `https://www.key2design.io`,
+    cancel_url: `https://www.key2design.io/payment`,
   });
 
   res.json({ id: session.id });
