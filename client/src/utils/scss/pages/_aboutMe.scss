@@ -91,7 +91,7 @@
     }
 
     .titleText {
-        font-size: 1.5vw;
+        font-size: 2.5vw;
         padding-top: 6px;
         color: $secondary;
 
@@ -100,11 +100,19 @@
     }
 
     .p {
-       font-size: 1.2vw; 
+       font-size: 1.2vw;
+       font-family: 'Heebo', sans-serif; 
     }
 
     h3 {
         font-size: 8vw;
+    }
+
+    h4 {
+        font-size: 2vw;
+        font-family: 'Heebo', sans-serif;
+        font-weight: 300;
+        align-items: center;
     }
 
     h6 {

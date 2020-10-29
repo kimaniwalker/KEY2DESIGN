@@ -57,7 +57,7 @@ const Contact2 = (props) => {
                     <NotificationContainer />
                     <div className="container mt-4">
                         
-                        <div className="row pt-3 pb-1">
+                        <div className="row pt-3 pb-1 d-flex flex-wrap">
                             <div className="col-lg-4 col-md-12 col-sm-12">
                                 <div className="py-2"><span>Lets Chat</span></div>
                                 <h2 className="py-2">Contact Us</h2>

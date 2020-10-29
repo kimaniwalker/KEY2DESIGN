@@ -1,4 +1,6 @@
 @import "../variables";
+@import "../typography";
+
 @import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Heebo:300&display=swap');
 
@@ -14,15 +16,22 @@
         text-align: center;
     }
 
+    h2 {
+        font-family: 'Heebo', sans-serif;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 200; 
+    }
+
     p {
         font-family: 'Heebo', sans-serif;
         font-style: Light;
     }
 
-    #subtitle {
+    /* #subtitle {
         text-align: center;
         font-size: 2vw;
-    }
+    } */
 
     #BannerButton {
         font-family: 'Heebo', sans-serif;

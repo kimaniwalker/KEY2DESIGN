@@ -62,12 +62,12 @@ class AboutMe2 extends Component {
 
                         <div className="row justify-content-center">
                             <h3 id="NAME" className="text-light">What Sepearates Us From The Others</h3>
-                            <h4 className="text-light">Our Ability To Bring Outstanding Result To Our Customers </h4>
+                            <h4 className="text-light">Our Ability To Bring Outstanding Results To Our Customers </h4>
 
 
                         </div>
-                        <div className="row justify-content-center py-3">
-                            <span><a href="/contact" className="btn btn-info">Contact Us</a></span>
+                        <div className="row justify-content-center py-4">
+                            <span><a href="/contact" className="btn btn-info text-light">Contact Us</a></span>
                         </div>
 
                     </div>

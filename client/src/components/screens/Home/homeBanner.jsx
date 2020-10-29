@@ -19,9 +19,9 @@ const HomeBanner = () => {
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
             <h1 className="text-light">Sofware Development Done Right</h1>
-            <p id="subtitle" className="lead">Establish More Customers, Not Just Local But Global</p>
-            <div className="row justify-content-center">
-              <button id="BannerButton" onClick={handleLink} type="button" className="btn btn-outline-info">
+            <h2 className="text-light">Establish More Customers, Not Just Local But Global</h2>
+            <div className="row justify-content-center py-4">
+              <button id="BannerButton" onClick={handleLink} type="button" className="btn btn-outline-info text-light">
                 Learn More About Us
               </button>
             </div>
